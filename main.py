@@ -1,0 +1,16 @@
+from utils import *
+
+
+def main():
+    nome = './testes/teste5.ptc'
+    programa = ler_arquivo(nome)
+    original = open(nome, 'r')
+    print(original.read())
+    print("\n----------------------------------------------------\n")
+
+    iniciar_analisador(programa)
+
+
+if __name__ == "__main__":
+    print("----------------- Análise Iniciada -----------------\n")
+    main()

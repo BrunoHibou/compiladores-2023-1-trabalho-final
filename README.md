@@ -1,7 +1,7 @@
 # Trabalho: Tradutor de Linguagem
 
 Nome dos alunos e números de matrícula:
-* Aluno: ___________________________
+* Aluno: Nonato Maia Filho, 2018214305
 * Aluno: ___________________________
 * Disciplina: Compiladores
 * Semestre: 2023/1
