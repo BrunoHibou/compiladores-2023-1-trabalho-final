@@ -19,7 +19,7 @@ def parse(tokens):
     def match(expected_token):
         nonlocal current_token, auxiliar, current_token
         if auxiliar == expected_token:
-            iniciar_tradutor(tokens)
+            iniciar_tradutor(tokens, auxiliar)
             #iniciar_tradutor(current_token)
             tokens.pop(0)
             advance()
