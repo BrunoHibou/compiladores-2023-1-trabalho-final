@@ -6,7 +6,7 @@ traducao = ""
 aux_elif = False
 
 
-def iniciar_tradutor(string, tipo):
+def iniciar_tradutor(string):
     global aux, indentation, traducao, aux_elif
     token = string[0]
 
