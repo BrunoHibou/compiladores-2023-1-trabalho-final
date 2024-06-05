@@ -1,15 +1,17 @@
 import sys
 
+# Variáveis globais para controle da tradução e formatação.
 aux = []
 indentation = ""
 traducao = ""
 aux_elif = False
 
-
+# Função principal que inicia o tradutor com uma string de tokens.
 def iniciar_tradutor(string):
     global aux, indentation, traducao, aux_elif
-    token = string[0]
+    token = string[0]  # Pega o primeiro token da string
 
+    # Função de decisão que escolhe qual função de escrita chamar com base no token atual.
     def decision():
         if aux:
             print("topo da lista auxiliar do tradutor: " + aux[-1])
@@ -26,6 +28,7 @@ def iniciar_tradutor(string):
         else:
             escrever_programa()
 
+    # Função para escrever comandos de impressão.
     def escrever_print():
         global aux, traducao
         if token == ";":
@@ -36,6 +39,7 @@ def iniciar_tradutor(string):
         else:
             escrever_programa()
 
+    # Função para escrever definições de função.
     def escrever_fun():
         global aux, indentation, traducao
         if token == "}":
@@ -56,6 +60,7 @@ def iniciar_tradutor(string):
         else:
             escrever_programa()
 
+    # Função para escrever declarações de variáveis.
     def escrever_var():
         global aux, traducao
         if token == ";":
@@ -66,6 +71,7 @@ def iniciar_tradutor(string):
         else:
             escrever_programa()
 
+    # Função para escrever laços while.
     def escrever_while():
         global aux, indentation, traducao
         if token == "}":
@@ -84,6 +90,7 @@ def iniciar_tradutor(string):
         else:
             escrever_programa()
 
+    # Função para escrever condições if, else e elif.
     def escrever_if_else_elif():
         global aux, indentation, traducao, aux_elif
         print(aux[-1])
@@ -114,7 +121,7 @@ def iniciar_tradutor(string):
         else:
             escrever_programa()
 
-
+    # Função para escrever outros elementos do programa que não se encaixam nas categorias acima.
     def escrever_programa():
         global aux, indentation, traducao
         if token == "}":
@@ -144,6 +151,7 @@ def iniciar_tradutor(string):
         else:
             traducao = traducao + indentation + token + " "
 
+    # Função para verificar e atualizar a lista auxiliar com base no token atual.
     def check():
         global aux_elif
         if token == "print":
@@ -161,17 +169,17 @@ def iniciar_tradutor(string):
             print(aux_elif)
             aux.append(token)
 
-    check()
+    check()  # Verifica o token atual e atualiza a lista auxiliar.
 
     if aux:
-        decision()
+        decision()  # Toma a decisão de qual função de escrita chamar com base no topo da lista auxiliar.
     else:
         aux.append(token)
         decision()
 
-
+# Função para imprimir a tradução e executar o código traduzido.
 def ler_programa():
     global traducao
     print(traducao)
     print("----------------- Executando o Código -----------------")
-    exec(traducao)
+    exec(traducao)  # Executa o código Python traduzido.
