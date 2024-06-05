@@ -1,4 +1,4 @@
-from dict import *
+from dict_old import *
 import re
 import sys
 
