@@ -2,7 +2,7 @@ from utils import *
 
 
 def main():
-    nome = './testes/teste1.ptc'
+    nome = './testes/teste8.ptc'
     programa = ler_arquivo(nome)  #retorna o programa a ser analisado sem comentários
     original = open(nome, 'r') #armazena o arquivo original 
     print(original.read())

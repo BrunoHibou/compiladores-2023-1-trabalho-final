@@ -18,6 +18,7 @@ def analisador_lexico(token):
                         if not auxiliar:
                             print(f"erro lexico {token}")
                             sys.exit()
+    
     return auxiliar
 
 
