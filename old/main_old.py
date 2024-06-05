@@ -3,8 +3,9 @@ from dict_old import *
 
 
 def main():
-    analyser = Utils()
+    analyser = Lexico()
     
+
 if __name__ == "__main__":
     print("----------------- Programa Iniciado -----------------")
     main()
