@@ -38,8 +38,6 @@ def ler_arquivo(teste):
 
 
 def iniciar_analisador(programa):
-    #apagar_txt("./testes/programa.py")
-    auxiliar = programa
     programa = adicionar_espacos_delimitadores(programa)
     programa = adicionar_espacos_operadores(programa)
     print(programa)
@@ -47,8 +45,6 @@ def iniciar_analisador(programa):
     tokens = tokenize(programa)
     print(tokens)
     parse(tokens)
-    #iniciar_tradutor(auxiliar)
-
 
 def tokenize(programa):
     tokens = []
@@ -85,13 +81,12 @@ def tokenize(programa):
 
 def adicionar_espacos_delimitadores(programa):
     padrao_aspas = r'"(.*?)"'
-    ocorrencias = re.findall(padrao_aspas, programa)
+    ocorrencias = re.findall(padrao_aspas, programa) #encontra todas as instâncias em que asbre aspas e fecha aspas
     marcador_espaco = "<ESPACO>"
     espacos_reservados = []
 
     for ocorrencia in ocorrencias:
         delimitador = f'"{ocorrencia}"'
-        espacos = " " * len(ocorrencia)
         programa = programa.replace(delimitador, delimitador.replace(ocorrencia, marcador_espaco))
         espacos_reservados.append(ocorrencia)
 

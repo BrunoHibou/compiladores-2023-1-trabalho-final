@@ -2,7 +2,6 @@ from lexico import *
 from tradutor import *
 import sys
 
-
 def parse(tokens):
     current_token = None
     auxiliar = None
@@ -242,5 +241,3 @@ def parse(tokens):
         print(tokens)
         print("\n----------------- Análise Sintática Concluída com Sucesso, Traduzindo o código para Python -----------------\n")
         ler_programa()
-
-
